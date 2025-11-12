@@ -38,7 +38,7 @@ ROOT_URLCONF = "config.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / "config" / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -68,6 +68,10 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# Login settings
+LOGIN_URL = "employee_login"
+LOGIN_REDIRECT_URL = "employee_dashboard"
 
 AUTH_PASSWORD_VALIDATORS: list[dict[str, str]] = []
 
